@@ -4,6 +4,8 @@ import { Toaster } from 'react-hot-toast';
 
 import Navbar from './components/Navbar';
 import ProtectedRoute from './components/ProtectedRoute';
+import PublicRoute from './components/PublicRoute'; // <-- IMPORT THE NEW COMPONENT
+
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
@@ -22,13 +24,12 @@ function App() {
           <Navbar />
           <Toaster position="top-center" reverseOrder={false} />
           
-          {/* THE FIX: Removed py-6 from this className */}
           <main className="bg-gray-50 min-h-screen">
             <Routes>
-              {/* Public Routes */}
-              <Route path="/" element={<Home />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
+              {/* Public Routes are now protected from logged-in users */}
+              <Route path="/" element={<PublicRoute><Home /></PublicRoute>} />
+              <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
+              <Route path="/signup" element={<PublicRoute><Signup /></PublicRoute>} />
               
               {/* Protected Routes */}
               <Route path="/outlets" element={<ProtectedRoute><Outlets /></ProtectedRoute>} />
