@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+FitFuel: Your Personal Nutrition & Fitness Dashboard 🚀
+FitFuel is a modern, full-stack MERN application designed to be your ultimate companion for making informed nutrition choices and tracking your fitness journey. It provides personalized calorie and macro goals, a comprehensive food and workout library, and real-time progress tracking to empower you to achieve your health objectives.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live Demo:  [https://my-fitfuel.vercel.app]  (Replace with your Vercel frontend URL)
 
-## Available Scripts
+✨ Key Features
+Full Authentication System: Secure user registration with JWT (JSON Web Tokens) and OTP verification via email (Nodemailer + Gmail SMTP). Includes a "Forgot Password" feature.
 
-In the project directory, you can run:
+Personalized Dashboard: A dynamic dashboard that calculates:
 
-### `npm start`
+BMI (Body Mass Index) and classifies it (e.g., Underweight, Normal, Overweight).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Daily Calorie Goal based on user's height, weight, age, gender, activity level, and fitness goal (weight loss, maintenance, or gain).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Net Calorie Balance: Tracks Calories Consumed - Calories Burned = Net Intake in real-time.
 
-### `npm test`
+Meal & Workout Tracking:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Log meals from a comprehensive food library.
 
-### `npm run build`
+Log workouts from a diverse exercise library.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The meal and workout logs automatically reset every day.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Comprehensive Food Library:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Extensive lists of Everyday Indian Foods, fast food outlets (McDonald's, KFC), and specialized diet plans like Gym Diet (Veg & Non-Veg).
 
-### `npm run eject`
+Includes a global food search to find any item across all categories instantly.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Comprehensive Workout Library:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Over 50 exercises categorized by type (Cardio, Strength, Sports).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Smart Logging: Log cardio by duration and strength exercises by sets & reps.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Automatic Calorie Burn Calculation based on the user's weight and the exercise's MET value.
 
-## Learn More
+Modern UI/UX:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Dark & Light Mode: A beautiful, animated theme toggle that saves user preference.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Fully Responsive Design: The UI is optimized for a seamless experience on both desktop and mobile devices.
 
-### Code Splitting
+Interactive & User-Friendly: Features include loading skeletons, interactive cards, and a slide-in mobile menu.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+🛠️ Built With
+This project is a full-stack MERN application built with modern technologies.
 
-### Analyzing the Bundle Size
+Frontend:
+Backend:
+Database:
+Authentication:
+🚀 Getting Started
+To get a local copy up and running, follow these simple steps.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Prerequisites
+Node.js & npm: Make sure you have Node.js installed.
 
-### Making a Progressive Web App
+MongoDB Atlas Account: You will need a free MongoDB Atlas cluster.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Gmail Account with App Password: To send OTP emails, you'll need a Gmail account with 2-Step Verification enabled and an App Password generated.
 
-### Advanced Configuration
+Installation
+Clone the repo:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+git clone [https://github.com/your-username/fitfuel.git](https://github.com/your-username/fitfuel.git)
 
-### Deployment
+Backend Setup:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Navigate to the server directory: cd server
 
-### `npm run build` fails to minify
+Install NPM packages: npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Create a .env file in the server directory and add your environment variables:
+
+MONGO_URI=YOUR_MONGODB_ATLAS_CONNECTION_STRING
+JWT_SECRET=YOUR_SUPER_SECRET_KEY
+EMAIL_USER=your-email@gmail.com
+EMAIL_PASS=your-16-character-gmail-app-password
+CLIENT_URL=http://localhost:3000
+
+Seed the database with food and workout data (run this once):
+
+npm run seed
+npm run seed-workouts
+
+Start the server: npm start
+
+Frontend Setup:
+
+Open a new terminal and navigate to the client directory: cd client
+
+Install NPM packages: npm install
+
+Create a .env file in the client directory and add your backend URL:
+
+REACT_APP_API_URL=http://localhost:5000
