@@ -41,18 +41,16 @@ const ProfilePage = () => {
   };
 
   return (
-    <div className="container mx-auto p-4 bg-gradient-to-br from-blue-50 to-purple-50 min-h-screen">
-      {/* CHANGED: Title is now dynamic with black text */}
-      <h1 className="text-4xl font-bold mb-6 text-center text-black">
+    <div className="container mx-auto p-4 min-h-screen">
+      <h1 className="text-4xl font-bold mb-6 text-center text-gray-800 dark:text-slate-100">
         {user?.name ? `${user.name}'s Profile` : 'Your Profile'}
       </h1>
-      <p className="text-center text-black mb-8 font-medium">Update your details to get accurate fitness calculations.</p>
+      <p className="text-center text-gray-600 dark:text-slate-400 mb-8 font-medium">Update your details to get accurate fitness calculations.</p>
       
-      <div className="max-w-md mx-auto bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-2xl">
+      <div className="max-w-md mx-auto bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-gray-200 dark:border-slate-700">
         <form onSubmit={onSubmit} className="space-y-6">
           <div>
-            <label className="block text-sm font-semibold text-gray-800 mb-2">Height (cm)</label>
-            {/* CHANGED: Clean borderless design with subtle shadow */}
+            <label className="block text-sm font-semibold text-gray-800 dark:text-slate-300 mb-2">Height (cm)</label>
             <input 
               type="number" 
               name="height" 
@@ -61,12 +59,11 @@ const ProfilePage = () => {
               required 
               min="50" 
               max="250" 
-              className="w-full px-4 py-3 bg-gray-50 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white transition-all duration-200 text-black shadow-sm"
+              className="w-full px-4 py-3 bg-gray-50 dark:bg-slate-700 text-gray-800 dark:text-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white dark:focus:bg-slate-600 transition-all duration-200 shadow-sm"
             />
           </div>
           <div>
-            <label className="block text-sm font-semibold text-gray-800 mb-2">Weight (kg)</label>
-            {/* CHANGED: Clean borderless design with subtle shadow */}
+            <label className="block text-sm font-semibold text-gray-800 dark:text-slate-300 mb-2">Weight (kg)</label>
             <input 
               type="number" 
               name="weight" 
@@ -75,12 +72,11 @@ const ProfilePage = () => {
               required 
               min="20" 
               max="300" 
-              className="w-full px-4 py-3 bg-gray-50 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white transition-all duration-200 text-black shadow-sm"
+              className="w-full px-4 py-3 bg-gray-50 dark:bg-slate-700 text-gray-800 dark:text-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white dark:focus:bg-slate-600 transition-all duration-200 shadow-sm"
             />
           </div>
           <div>
-            <label className="block text-sm font-semibold text-gray-800 mb-2">Age</label>
-            {/* CHANGED: Clean borderless design with subtle shadow */}
+            <label className="block text-sm font-semibold text-gray-800 dark:text-slate-300 mb-2">Age</label>
             <input 
               type="number" 
               name="age" 
@@ -89,28 +85,28 @@ const ProfilePage = () => {
               required 
               min="12" 
               max="120" 
-              className="w-full px-4 py-3 bg-gray-50 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white transition-all duration-200 text-black shadow-sm"
+              className="w-full px-4 py-3 bg-gray-50 dark:bg-slate-700 text-gray-800 dark:text-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white dark:focus:bg-slate-600 transition-all duration-200 shadow-sm"
             />
           </div>
           <div>
-            <label className="block text-sm font-semibold text-gray-800 mb-2">Gender</label>
+            <label className="block text-sm font-semibold text-gray-800 dark:text-slate-300 mb-2">Gender</label>
             <select 
               name="gender" 
               value={formData.gender} 
               onChange={onChange} 
-              className="w-full px-4 py-3 bg-gray-50 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white transition-all duration-200 text-black shadow-sm"
+              className="w-full px-4 py-3 bg-gray-50 dark:bg-slate-700 text-gray-800 dark:text-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white dark:focus:bg-slate-600 transition-all duration-200 shadow-sm"
             >
               <option value="male">Male</option>
               <option value="female">Female</option>
             </select>
           </div>
           <div>
-            <label className="block text-sm font-semibold text-gray-800 mb-2">Activity Level</label>
+            <label className="block text-sm font-semibold text-gray-800 dark:text-slate-300 mb-2">Activity Level</label>
             <select 
               name="activityLevel" 
               value={formData.activityLevel} 
               onChange={onChange} 
-              className="w-full px-4 py-3 bg-gray-50 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white transition-all duration-200 text-black shadow-sm"
+              className="w-full px-4 py-3 bg-gray-50 dark:bg-slate-700 text-gray-800 dark:text-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white dark:focus:bg-slate-600 transition-all duration-200 shadow-sm"
             >
               <option value="sedentary">Sedentary (little to no exercise)</option>
               <option value="light">Lightly active (1-3 days/week)</option>
@@ -120,12 +116,12 @@ const ProfilePage = () => {
             </select>
           </div>
            <div>
-            <label className="block text-sm font-semibold text-gray-800 mb-2">Your Goal</label>
+            <label className="block text-sm font-semibold text-gray-800 dark:text-slate-300 mb-2">Your Goal</label>
             <select 
               name="goal" 
               value={formData.goal} 
               onChange={onChange} 
-              className="w-full px-4 py-3 bg-gray-50 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white transition-all duration-200 text-black shadow-sm"
+              className="w-full px-4 py-3 bg-gray-50 dark:bg-slate-700 text-gray-800 dark:text-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white dark:focus:bg-slate-600 transition-all duration-200 shadow-sm"
             >
               <option value="lose">Weight Loss</option>
               <option value="maintain">Maintain Weight</option>
