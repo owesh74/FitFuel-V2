@@ -1,48 +1,18 @@
 FitFuel: Your Personal Nutrition & Fitness Dashboard 🚀
 FitFuel is a modern, full-stack MERN application designed to be your ultimate companion for making informed nutrition choices and tracking your fitness journey. It provides personalized calorie and macro goals, a comprehensive food and workout library, and real-time progress tracking to empower you to achieve your health objectives.
 
-Live Demo:  [https://my-fitfuel.vercel.app]  
+Live Demo: https://my-fitfuel.vercel.app/
 
 ✨ Key Features
-Full Authentication System: Secure user registration with JWT (JSON Web Tokens) and OTP verification via email (Nodemailer + Gmail SMTP). Includes a "Forgot Password" feature.
+Full Authentication System: Secure user registration with JWT and OTP verification via email. Includes a "Forgot Password" feature.
 
-Personalized Dashboard: A dynamic dashboard that calculates:
+Personalized Dashboard: A dynamic dashboard that calculates BMI, daily calorie goals (for weight loss, maintenance, or gain), and real-time net calorie balance.
 
-BMI (Body Mass Index) and classifies it (e.g., Underweight, Normal, Overweight).
+Meal & Workout Tracking: Log meals and workouts from comprehensive libraries. All logs automatically reset daily.
 
-Daily Calorie Goal based on user's height, weight, age, gender, activity level, and fitness goal (weight loss, maintenance, or gain).
+Comprehensive Food & Workout Libraries: Extensive lists of Indian foods, fast food, and diet-specific items. A library of over 50 exercises with smart logging (duration for cardio, sets/reps for strength).
 
-Net Calorie Balance: Tracks Calories Consumed - Calories Burned = Net Intake in real-time.
-
-Meal & Workout Tracking:
-
-Log meals from a comprehensive food library.
-
-Log workouts from a diverse exercise library.
-
-The meal and workout logs automatically reset every day.
-
-Comprehensive Food Library:
-
-Extensive lists of Everyday Indian Foods, fast food outlets (McDonald's, KFC), and specialized diet plans like Gym Diet (Veg & Non-Veg).
-
-Includes a global food search to find any item across all categories instantly.
-
-Comprehensive Workout Library:
-
-Over 50 exercises categorized by type (Cardio, Strength, Sports).
-
-Smart Logging: Log cardio by duration and strength exercises by sets & reps.
-
-Automatic Calorie Burn Calculation based on the user's weight and the exercise's MET value.
-
-Modern UI/UX:
-
-Dark & Light Mode: A beautiful, animated theme toggle that saves user preference.
-
-Fully Responsive Design: The UI is optimized for a seamless experience on both desktop and mobile devices.
-
-Interactive & User-Friendly: Features include loading skeletons, interactive cards, and a slide-in mobile menu.
+Modern UI/UX: A beautiful, animated Dark & Light Mode, a fully responsive design, and interactive elements for a premium user experience.
 
 🛠️ Built With
 This project is a full-stack MERN application built with modern technologies.
@@ -50,29 +20,33 @@ This project is a full-stack MERN application built with modern technologies.
 Frontend:
 Backend:
 Database:
-Authentication:
+Authentication & Services:
 🚀 Getting Started
 To get a local copy up and running, follow these simple steps.
 
 Prerequisites
-Node.js & npm: Make sure you have Node.js installed.
+Node.js & npm
 
-MongoDB Atlas Account: You will need a free MongoDB Atlas cluster.
+MongoDB Atlas Account
 
-Gmail Account with App Password: To send OTP emails, you'll need a Gmail account with 2-Step Verification enabled and an App Password generated.
+Gmail Account with an App Password
 
 Installation
-Clone the repo:
+Clone the Backend Repo:
 
-git clone [https://github.com/your-username/fitfuel.git](https://github.com/your-username/fitfuel.git)
+git clone [https://github.com/owesh74/Fitfuel-Server-v2.git](https://github.com/owesh74/Fitfuel-Server-v2.git)
+
+Clone the Frontend Repo:
+
+git clone [https://github.com/owesh74/FitFuel-V2.git](https://github.com/owesh74/FitFuel-V2.git)
 
 Backend Setup:
 
-Navigate to the server directory: cd server
+Navigate to the server directory: cd Fitfuel-Server-v2
 
-Install NPM packages: npm install
+Install packages: npm install
 
-Create a .env file in the server directory and add your environment variables:
+Create a .env file and add your variables:
 
 MONGO_URI=YOUR_MONGODB_ATLAS_CONNECTION_STRING
 JWT_SECRET=YOUR_SUPER_SECRET_KEY
@@ -80,7 +54,7 @@ EMAIL_USER=your-email@gmail.com
 EMAIL_PASS=your-16-character-gmail-app-password
 CLIENT_URL=http://localhost:3000
 
-Seed the database with food and workout data (run this once):
+Seed the database (run this once):
 
 npm run seed
 npm run seed-workouts
@@ -89,10 +63,10 @@ Start the server: npm start
 
 Frontend Setup:
 
-Open a new terminal and navigate to the client directory: cd client
+Open a new terminal and navigate to the client directory: cd FitFuel-V2
 
-Install NPM packages: npm install
+Install packages: npm install
 
-Create a .env file in the client directory and add your backend URL:
+Create a .env file and add your backend URL:
 
 REACT_APP_API_URL=http://localhost:5000
