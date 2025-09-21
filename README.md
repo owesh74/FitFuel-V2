@@ -1,7 +1,7 @@
 FitFuel: Your Personal Nutrition & Fitness Dashboard 🚀
 FitFuel is a modern, full-stack MERN application designed to be your ultimate companion for making informed nutrition choices and tracking your fitness journey. It provides personalized calorie and macro goals, a comprehensive food and workout library, and real-time progress tracking to empower you to achieve your health objectives.
 
-Live Demo:  [https://my-fitfuel.vercel.app]  (Replace with your Vercel frontend URL)
+Live Demo:  [https://my-fitfuel.vercel.app]  
 
 ✨ Key Features
 Full Authentication System: Secure user registration with JWT (JSON Web Tokens) and OTP verification via email (Nodemailer + Gmail SMTP). Includes a "Forgot Password" feature.
