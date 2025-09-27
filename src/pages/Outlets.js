@@ -68,7 +68,7 @@ const Outlets = () => {
       <div className="container mx-auto p-4 sm:p-6 lg:p-8">
         <div className="text-center mb-8 sm:mb-12">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-500 dark:from-blue-300 dark:via-purple-300 dark:to-indigo-300 bg-clip-text text-transparent mb-4">
-            Find Your Fuel
+            Find Your Meals
           </h1>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
         </div>

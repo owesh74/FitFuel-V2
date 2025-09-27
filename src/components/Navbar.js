@@ -4,6 +4,9 @@ import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
 import { useTheme } from '../context/ThemeContext';
 import { useWorkout } from '../context/WorkoutContext';
+import { FaDumbbell } from "react-icons/fa6";
+import { GiMeal } from "react-icons/gi";
+import { VscGraph } from "react-icons/vsc";
 
 const Navbar = () => {
   const { user, logout } = useAuth();
@@ -58,7 +61,7 @@ const Navbar = () => {
               {user ? (
                 <>
                   <NavLink to="/dashboard" className={({ isActive }) => `font-semibold transition-colors relative group py-2 px-3 rounded-lg ${isActive ? 'text-purple-600 dark:text-purple-400 bg-purple-50/50 dark:bg-purple-500/10' : 'text-gray-700 dark:text-gray-300 hover:text-purple-600 hover:bg-purple-50/50'}`}><span className="absolute -bottom-1 left-3 w-0 h-0.5 bg-gradient-to-r from-purple-600 to-blue-600 group-hover:w-[calc(100%-24px)] transition-all"></span>Dashboard</NavLink>
-                  <NavLink to="/outlets" className={({ isActive }) => `font-semibold transition-colors relative group py-2 px-3 rounded-lg ${isActive ? 'text-purple-600 dark:text-purple-400 bg-purple-50/50 dark:bg-purple-500/10' : 'text-gray-700 dark:text-gray-300 hover:text-purple-600 hover:bg-purple-50/50'}`}>Outlets</NavLink>
+                  <NavLink to="/outlets" className={({ isActive }) => `font-semibold transition-colors relative group py-2 px-3 rounded-lg ${isActive ? 'text-purple-600 dark:text-purple-400 bg-purple-50/50 dark:bg-purple-500/10' : 'text-gray-700 dark:text-gray-300 hover:text-purple-600 hover:bg-purple-50/50'}`}>Meals</NavLink>
                   <NavLink to="/workouts" className={({ isActive }) => `font-semibold transition-colors relative group py-2 px-3 rounded-lg ${isActive ? 'text-purple-600 dark:text-purple-400 bg-purple-50/50 dark:bg-purple-500/10' : 'text-gray-700 dark:text-gray-300 hover:text-purple-600 hover:bg-purple-50/50'}`}>Workouts</NavLink>
                   <div className="flex items-center space-x-4 pl-6 border-l-2 border-gray-200/50 dark:border-slate-600/50">
                     <ThemeToggleButton />
@@ -102,9 +105,12 @@ const Navbar = () => {
                 <div><p className="font-bold text-gray-800 dark:text-gray-100 text-lg">{user.name}</p><p className="text-sm text-gray-500 dark:text-gray-400">View Profile</p></div>
               </Link>
               <hr className="border-gray-200/50 dark:border-slate-600/50"/>
-              <NavLink to="/dashboard" onClick={closeMenu} className={({ isActive }) => `flex justify-between items-center py-3 px-4 font-semibold rounded-xl ${isActive ? 'bg-purple-100 dark:bg-purple-500/20 text-purple-600 dark:text-purple-400' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-700'}`}><span>📊 Dashboard</span>{(cartItems.length + todaysWorkouts.length) > 0 && <span className="bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full">{cartItems.length + todaysWorkouts.length}</span>}</NavLink>
-              <NavLink to="/outlets" onClick={closeMenu} className={({ isActive }) => `block py-3 px-4 font-semibold rounded-xl ${isActive ? 'bg-purple-100 dark:bg-purple-500/20 text-purple-600 dark:text-purple-400' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-700'}`}>🏪 Outlets</NavLink>
-              <NavLink to="/workouts" onClick={closeMenu} className={({ isActive }) => `block py-3 px-4 font-semibold rounded-xl ${isActive ? 'bg-purple-100 dark:bg-purple-500/20 text-purple-600 dark:text-purple-400' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-700'}`}>💪 Workouts</NavLink>
+              <NavLink to="/dashboard" onClick={closeMenu} className={({ isActive }) => `flex justify-between items-center py-3 px-4 font-semibold rounded-xl ${isActive ? 'bg-purple-100 dark:bg-purple-500/20 text-purple-600 dark:text-purple-400' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-700'}`}><div className="flex items-center gap-2">
+    <VscGraph className="w-5 h-5" />
+    <span>Dashboard</span>
+  </div>{(cartItems.length + todaysWorkouts.length) > 0 && <span className="bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full">{cartItems.length + todaysWorkouts.length}</span>}</NavLink>
+              <NavLink to="/outlets" onClick={closeMenu} className={({ isActive }) => `block py-3 px-4 font-semibold rounded-xl ${isActive ? 'bg-purple-100 dark:bg-purple-500/20 text-purple-600 dark:text-purple-400' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-700'}`}><div className="flex items-center gap-2"> <GiMeal className="w-5 h-5" /><span>Meals</span></div></NavLink>
+              <NavLink to="/workouts" onClick={closeMenu} className={({ isActive }) => `block py-3 px-4 font-semibold rounded-xl ${isActive ? 'bg-purple-100 dark:bg-purple-500/20 text-purple-600 dark:text-purple-400' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-700'}`}><div className="flex items-center gap-2">  <FaDumbbell className="w-5 h-5" /><span>Workouts</span> </div></NavLink>
               <div className="pt-4 border-t border-gray-200/50 dark:border-slate-600/50"><button onClick={handleLogout} className="w-full text-left py-3 px-4 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-500/10 rounded-xl font-semibold flex items-center space-x-3"><svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" /></svg><span>Logout</span></button></div>
             </div>
           )}

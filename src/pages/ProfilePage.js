@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 import api from '../services/api';
 import toast from 'react-hot-toast';
 
 const ProfilePage = () => {
   const { user, setUser } = useAuth();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     height: '',
     weight: '',
@@ -35,6 +37,11 @@ const ProfilePage = () => {
       const { data } = await api.put('/auth/profile', formData);
       setUser(data);
       toast.success('Profile updated successfully!');
+      
+      // Redirect to dashboard after 2 seconds
+      setTimeout(() => {
+        navigate('/dashboard');
+      }, 1000);
     } catch (err) {
       toast.error('Failed to update profile.');
     }
