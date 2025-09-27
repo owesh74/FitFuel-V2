@@ -2,7 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import { useWorkout } from '../context/WorkoutContext';
+import { VscGraph} from "react-icons/vsc";
+import { FaBurn } from "react-icons/fa";
+import { FaDumbbell } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
+import { GiMeal } from "react-icons/gi";
 import api from '../services/api';
 import toast from 'react-hot-toast';
 
@@ -184,7 +188,7 @@ const DashboardPage = () => {
     </div>
   );
 
-  const goalEmoji = user.goal === 'lose' ? '🔥' : user.goal === 'gain' ? '💪' : '⚖️';
+  const goalEmoji = user.goal === 'lose' ? '🔥': user.goal === 'gain' ? '💪' : '⚖️';
   const goalTitle = user.goal === 'lose' ? 'Fat Loss Journey' : user.goal === 'gain' ? 'Muscle Gain Journey' : 'Maintenance Dashboard';
 
   return (
@@ -211,7 +215,7 @@ const DashboardPage = () => {
             <div className="space-y-8">
               <div className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm rounded-3xl shadow-2xl p-8 border border-white/20 dark:border-slate-700/50 transform hover:scale-[1.01] transition-all duration-300">
                 <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6 flex items-center gap-3">
-                  <span className="text-2xl animate-pulse">📊</span> Today's Net Calorie Balance
+                  <span className="text-2xl animate-pulse"><VscGraph /></span> Today's Net Calorie Balance
                 </h3>
                 <div className="grid grid-cols-3 gap-4 text-center mb-6">
                   <div className="transform hover:scale-110 transition-transform duration-200"><p className="font-bold text-3xl text-emerald-600 dark:text-emerald-400">{totals.calories.toFixed(0)}</p><p className="text-sm text-gray-500 dark:text-gray-400 font-medium">Consumed</p></div>
@@ -227,7 +231,7 @@ const DashboardPage = () => {
               {/* NEW: Daily Burn Target Progress */}
               <div className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm rounded-3xl shadow-2xl p-8 border border-white/20 dark:border-slate-700/50 transform hover:scale-[1.01] transition-all duration-300">
                 <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6 flex items-center gap-3">
-                  <span className="text-2xl animate-pulse">🔥</span> Today's Calorie Burn Progress
+                  <span className="text-2xl animate-pulse"><FaBurn /></span> Today's Calorie Burn Progress
                 </h3>
                 <div className="grid grid-cols-2 gap-4 text-center mb-6">
                   <div className="transform hover:scale-110 transition-transform duration-200">
@@ -273,7 +277,7 @@ const DashboardPage = () => {
                 )}
               </div>
               {cartItems.length === 0 ? (
-                <div className="text-center py-20"><p className="text-2xl text-gray-500 dark:text-gray-400 flex items-center justify-center gap-3"><span className="text-4xl animate-bounce">🍽️</span> No items in your meal yet</p></div>
+                <div className="text-center py-20"><p className="text-2xl text-gray-500 dark:text-gray-400 flex items-center justify-center gap-3"><span className="text-4xl animate-bounce"><GiMeal /></span> No items in your meal yet</p></div>
               ) : (
                 <div className="grid gap-4 mb-6">{cartItems.map((item, index) => <ItemCard key={index} item={item} onRemove={() => removeFromCart(index)} />)}</div>
               )}
@@ -293,7 +297,7 @@ const DashboardPage = () => {
                 </div>
               </div>
               {todaysWorkouts.length === 0 ? (
-                <div className="text-center py-20"><p className="text-2xl text-gray-500 dark:text-gray-400 flex items-center justify-center gap-3"><span className="text-4xl animate-bounce">💪</span> No workouts logged yet today.</p></div>
+                <div className="text-center py-20"><p className="text-2xl text-gray-500 dark:text-gray-400 flex items-center justify-center gap-3"><span className="text-4xl animate-bounce"><FaDumbbell /></span> No workouts logged yet today.</p></div>
               ) : (
                 <div className="grid gap-4 mb-6">{todaysWorkouts.map((w) => <ItemCard key={w._id} item={w} onRemove={() => removeWorkout(w._id)} type="workout" />)}</div>
               )}
@@ -340,7 +344,7 @@ const DashboardPage = () => {
                   {/* Nutrition Plan */}
                   <div className="mb-6">
                     <h5 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-3 flex items-center gap-2">
-                      <span className="text-xl">🍽️</span> Daily Nutrition Plan
+                      <span className="text-xl"><GiMeal /></span> Daily Nutrition Plan
                     </h5>
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                       <div className="bg-blue-50 dark:bg-blue-500/10 p-4 rounded-lg text-center border border-blue-200 dark:border-blue-500/20">
@@ -369,7 +373,7 @@ const DashboardPage = () => {
                   {/* Calorie Burn Plan */}
                   <div className="mb-6">
                     <h5 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-3 flex items-center gap-2">
-                      <span className="text-xl">🔥</span> Daily Calorie Burn Plan
+                      <span className="text-xl"><FaBurn /></span> Daily Calorie Burn Plan
                     </h5>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
                       <div className="bg-red-50 dark:bg-red-500/10 p-4 rounded-lg text-center border border-red-200 dark:border-red-500/20">
@@ -394,7 +398,7 @@ const DashboardPage = () => {
                   {burnRecommendations.length > 0 && (
                     <div>
                       <h5 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-3 flex items-center gap-2">
-                        <span className="text-xl">💪</span> Recommended Exercise Plan
+                        <span className="text-xl"><FaDumbbell /></span> Recommended Exercise Plan
                       </h5>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {burnRecommendations.map((rec, index) => (
