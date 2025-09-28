@@ -423,6 +423,8 @@ const DashboardPage = () => {
                       <div className="mt-4 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-500/10 dark:to-indigo-500/10 rounded-lg border border-blue-200 dark:border-blue-500/20">
                         <p className="text-sm text-blue-700 dark:text-blue-300 font-medium">
                           <span className="font-semibold">💡 Smart Tip:</span> Choose 2-3 activities that you enjoy most. Consistency is more important than intensity for long-term success!
+                          <div></div>
+                          <span className="font-semibold">🎯 Coach’s Corner:</span> The plan supports healthy fat loss, but progress may take longer than the target timeline it’s not possible to lose a lot of weight in a short time, so avoid unrealistic assumptions.
                         </p>
                       </div>
                     </div>
