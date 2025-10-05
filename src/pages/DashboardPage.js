@@ -246,7 +246,8 @@ const DashboardPage = () => {
                 <div className="relative overflow-hidden bg-gray-200 dark:bg-slate-700 rounded-full h-6 shadow-inner">
                   <div className="bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 h-6 rounded-full transition-all duration-1000 ease-out shadow-lg" style={{ width: `${Math.min(burnProgress, 100)}%` }}></div>
                 </div>
-                <p className="text-sm text-center mt-3 text-gray-600 dark:text-gray-400 font-medium">Target: {dailyBurnTarget.toFixed(0)} kcal</p>
+                <p className="text-sm text-center mt-3 text-gray-600 dark:text-gray-400 font-medium">Target: {dailyBurnTarget.toFixed(0)} kcal </p>
+                <p className="text-sm text-center mt-3 text-gray-600 dark:text-gray-400 font-medium">Your body automatically burns {dailyCalories.toFixed(0)} kcal each day exceeding this leads to fat loss </p>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
